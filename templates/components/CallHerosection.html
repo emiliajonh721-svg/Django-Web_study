@@ -1,0 +1,100 @@
+{% load static %}
+<section class="pb-16">
+    <div class="bg-gray-100 w-full py-10 lg:py-16 px-4 sm:px-8 lg:px-20 text-blue-700 flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div class="w-full lg:w-1/2">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-popin">What we offer</h1>
+            <h4 class="pt-3 text-lg sm:text-xl font-popin font-bold text-black">Your pathway to academic success</h4>
+            <p class="pt-3 text-base sm:text-lg font-popin text-gray-500">
+                ELA delivers Cambodia’s leading personalised English language programmes, offering student-focused pathways designed for international academic success and professional development.
+            </p>
+            <p class="pt-3 font-popin font-medium text-blue-900">Your journey fluency starts here!</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <button class="cursor-pointer w-full sm:w-40 h-11 flex items-center justify-center bg-blue-500 text-white transition duration-300 font-medium rounded hover:border-blue-500 border hover:bg-gray-100 hover:text-blue-900">
+                    Get Course
+                </button>
+                <button class="cursor-pointer border-blue-900 border w-full sm:w-32 h-11 flex items-center justify-center font-medium rounded hover:bg-blue-500 hover:text-white transition duration-300">
+                    Contact
+                </button>
+            </div> 
+        </div>
+        <div class="w-full lg:w-1/2 hidden md:flex justify-center">
+            <img class="w-full max-w-md lg:max-w-lg h-auto object-cover rounded-lg " src="{% static 'images/teacher.png' %}" alt="Teacher">
+        </div>
+    </div>
+    <div class="mt-12 px-4 sm:px-8 lg:px-20">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-500">Explore course</h2>
+                <p class="text-gray-500">Popular course</p>
+            </div>
+            <a href="{% url 'Allcourse' %}" class="inline-flex items-center justify-center gap-2 text-base bg-blue-500 px-5 py-2.5 rounded-xl text-white hover:bg-white hover:border-blue-500 border-2 border-transparent hover:text-blue-500 transition duration-300 w-fit">
+                <i class="fa-solid fa-eye"></i> View courses
+            </a>
+        </div>
+    </div>
+    <div class="mt-8 w-full px-4 sm:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white flex flex-col justify-between p-6 border-gray-300 border rounded-lg shadow-xs">
+            <div>
+                <div class="bg-blue-400 w-full h-48 rounded overflow-hidden">
+                    <a href="{% url 'ElectronicBooks' %}">
+                        <img class="object-cover w-full h-full" src="{% static 'booksimage/ego-enemy.png' %}" alt="Electronic Books" />
+                    </a>
+                </div>
+                <a href="{% url 'ElectronicBooks' %}">
+                    <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue-900">Electronic Books</h5>
+                </a>
+                <p class="mb-6 text-gray-700">Learn at your own pace anytime, anywhere with interactive lessons and clear, practical examples.</p>
+            </div>
+            <div>
+                <a href="{% url 'ElectronicBooks' %}" class="inline-flex items-center border border-gray-300 shadow-xs font-medium rounded-[10px] text-sm px-4 py-2.5 hover:bg-slate-100">
+                    Read more
+                    <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+                </a>
+                <p class="mt-3 text-sm text-gray-500"><i class="fa-regular fa-eye mr-1"></i>89 views</p>
+            </div>
+        </div>
+        <div class="bg-white flex flex-col justify-between p-6 border-gray-300 border rounded-lg shadow-xs">
+            <div>
+                <div class="bg-blue-400 w-full h-48 rounded overflow-hidden">
+                    <a href="{% url 'IELS' %}">
+                        <img class="object-cover w-full h-full" src="{% static 'images/English-for-IELS-1.png' %}" alt="IELTS Courses" />
+                    </a>
+                </div>
+                <a href="{% url 'IELS' %}">
+                    <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue-900">IELTS Courses</h5>
+                </a>
+                <p class="mb-6 text-gray-700">Boost your band score with targeted exam strategies and real-world practice across all four test modules.</p>
+            </div>
+            <div>
+                <a href="{% url 'IELS' %}" class="inline-flex items-center border border-gray-300 shadow-xs font-medium rounded-[10px] text-sm px-4 py-2.5 hover:bg-slate-100">
+                    Read more
+                    <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+                </a>
+                <p class="mt-3 text-sm text-gray-500"><i class="fa-regular fa-eye mr-1"></i>210 views</p>
+            </div>
+        </div>
+        <div class="bg-white flex flex-col justify-between p-6 border-gray-300 border rounded-lg shadow-xs">
+            <div>
+                <div class="bg-blue-400 w-full h-48 rounded overflow-hidden">
+                    <a href="{% url 'EnglishBussiness' %}">
+                        <img class="object-cover w-full h-full" src="{% static 'images/English-for-business.jpg' %}" alt="English for Business" />
+                    </a>
+                </div>
+                <a href="{% url 'EnglishBussiness' %}">
+                    <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue-900">English for Business</h5>
+                </a>
+                <p class="mb-6 text-gray-700">Lead meetings, negotiate deals, and write professional emails with clarity and confidence.</p>
+            </div>
+            <div>
+                <a href="{% url 'EnglishBussiness' %}" class="inline-flex items-center border border-gray-300 shadow-xs font-medium rounded-[10px] text-sm px-4 py-2.5 hover:bg-slate-100">
+                    Read more
+                    <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+                </a>
+                <p class="mt-3 text-sm text-gray-500"><i class="fa-regular fa-eye mr-1"></i>114 views</p>
+            </div>
+        </div>
+
+    </div>
+</section>

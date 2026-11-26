@@ -1,0 +1,19 @@
+
+{% extends 'Homepage.html' %}
+{% block title %}   
+    Tour Guides 
+{% endblock title %} 
+
+
+
+{% block contents %}
+    {% load static %}
+    {% include 'components/CallHeader.html' %}
+    {% include 'components/CallCarosel.html' %}
+    {% include 'components/allcourseFolders/CallTGVocabulary.html'%}
+    {% include 'components/CallFooter.html' %}
+{% endblock contents %}
+
+    
+
+    

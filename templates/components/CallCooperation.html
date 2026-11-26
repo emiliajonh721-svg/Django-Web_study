@@ -1,0 +1,30 @@
+{% load static %}
+
+<!-- Changed: ml-30 -> px-4 sm:px-8 lg:mx-30 -->
+<div class="flex items-center px-4 sm:px-8 lg:mx-30 py-4 md:py-8 flex-wrap justify-start">
+    <h1 class="text-2xl md:text-[20pt] font-bold">Cooperation</h1>
+</div>
+
+<!-- Changed: mx-30 gap-10 -> px-4 sm:px-8 lg:mx-30 gap-6 md:gap-10 -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 px-4 sm:px-8 lg:mx-30 items-center place-items-center">
+    <!-- Changed: w-[150px] h-[150px] -> w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center -->
+    <div class="w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/harvard.png' %}" alt="Harvard">
+    </div>
+    <div class="w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/oxford.png' %}" alt="Oxford">
+    </div>
+    <div class="w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/imperial.png' %}" alt="Imperial">
+    </div>
+    <!-- Changed: w-[250px] h-[250px] -> w-36 h-36 sm:w-[250px] sm:h-[250px] so it fits inside 2 columns on phones -->
+    <div class="w-36 h-36 sm:w-[250px] sm:h-[250px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/Massachusetts.png' %}" alt="Massachusetts">
+    </div>
+    <div class="w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/standford.png' %}" alt="Stanford">
+    </div>
+    <div class="w-28 h-28 sm:w-[150px] sm:h-[150px] flex items-center justify-center">
+        <img class="max-h-full max-w-full object-contain rounded-base" src="{% static 'images/cambridge.png' %}" alt="Cambridge">
+    </div>
+</div>

@@ -1,0 +1,68 @@
+{% extends 'Homepage.html' %}
+{% block title %}   
+    Login
+{% endblock title %} 
+
+
+
+{% block contents %}
+    {% load static %}
+    {% load socialaccount %}
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
+        <div class="bg-white p-8 rounded-xl shadow-lg w-[400px]">
+            <h1 class="text-3xl font-bold text-center mb-6">
+                Login  <i class="fa-solid fa-graduation-cap text-2xl text-blue-500"></i>
+            </h1>
+            <!-- Display error -->
+            {% if error %}
+                <p class="text-red-500 text-center mb-4">
+                    {{ error }}
+                </p>
+            {% endif %}
+            <!-- Login Form -->
+            <form method="POST">
+                {% csrf_token %}
+                <!-- Username -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">
+                        Username
+                    </label>
+                    <input
+                        type="text"
+                        name="username"
+                        required
+                        class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        placeholder="Enter your username">
+                </div>
+                <!-- Password -->
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">
+                        Password
+                    </label>
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        placeholder="Enter your password">
+                </div>
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+                    Login <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </form>
+            <form method="POST" action="{% provider_login_url 'google' %}" class="mt-2">
+                {% csrf_token %}
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+                    Continue with Google <i class="fa-brands fa-google"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock contents %}
+
+    
+
+    

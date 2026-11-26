@@ -1,0 +1,292 @@
+{% load static %}
+<!-- <h1 class="ml-40 font-popin text-[20pt] font-extrabold text-blue-900">Beginers course</h1> -->
+<div class="flex justify-center mt-5 px-4">
+    <div class="flex flex-col md:flex-row gap-15  w-[80%]">
+        <!-- Video Player -->
+        <div class="flex-1 min-w-0">
+            <video
+                id="video-player"
+                poster="{% static videos.0.thumbnail %}"
+                preload="none"
+                class="w-full h-56 md:h-72 lg:h-96 rounded-lg bg-black object-cover"
+                controls>
+                <source
+                    id="video-source"
+                    src="{% static videos.0.url %}"
+                    type="video/mp4">
+
+            </video>
+            <p id="video-title" class="mt-3 font-extrabold text-[25pt] font-popin text-blue-900">
+                {{ videos.0.title }}
+            </p>
+<div class="hidden sm:block md:block">
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">COURSE DESCRIPTSIONS</h1>
+    <div class="font-popin text-gray-700 flex flex-col gap-5 indent-5">
+        <p>The IELTS Preparation Course is designed for learners who already have a solid foundation in English and want to achieve a high band score on the International English Language Testing System (IELTS) exam. This course focuses on mastering test-taking strategies, academic vocabulary, complex grammar, time management, and clear communication skills to help learners succeed in both the IELTS Academic and General Training modules.</p>
+        <p>Throughout this course, learners will master the four main IELTS test components: Listening, Speaking, Reading, and Writing, along with essential supporting skills such as Academic &amp; Topic-Specific Vocabulary, Complex Sentence Structures, and Clear Pronunciation.</p>
+        <p>The lessons explore a wide range of common IELTS exam themes, including education, technology, environment, health, global issues, society, culture, and work. Learners will study effective answering techniques, cohesive devices, data interpretation, essay structures, and high-scoring lexical resources to meet official IELTS band descriptors with precision.</p>
+        <p>In addition, the course provides in-depth video lessons, authentic exam-style examples, timed reading passages, multi-accent listening practice, structured speaking simulations, and mock quizzes to reinforce test readiness. By the end of the course, learners will be able to approach every section of the IELTS exam with confidence, manage time effectively under test conditions, and achieve their target band score for university admission, immigration, or career advancement.</p>
+    </div>
+
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">THIS COURSE IS FOR</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Students and learners who already have an intermediate level of English and want to achieve a high IELTS band score.</p>
+        <p>2-Applicants preparing for international university admission, scholarships, or overseas study programs.</p>
+        <p>3-Professionals and individuals seeking English proficiency certification for work visas, migration, or global career opportunities.</p>
+        <p>4-Test-takers who want to master proven strategies for IELTS Listening, Reading, Writing (Task 1 &amp; Task 2), and Speaking.</p>
+        <p>5-Learners who struggle with time management, exam anxiety, or understanding official IELTS scoring criteria.</p>
+        <p>6-Previous IELTS candidates looking to overcome score plateaus and boost their overall band performance.</p>
+    </div>
+
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">COURSE REQUIREMENTS</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-A solid intermediate command of English, including comfortable use of everyday vocabulary and core grammar tenses.</p>
+        <p>2-A strong commitment to practicing exam techniques, expanding academic vocabulary, and completing timed tasks.</p>
+        <p>3-A smartphone, tablet, or computer for accessing video lessons and practice materials.</p>
+        <p>4-An internet connection for watching lessons, listening to audio tracks, and completing online quizzes.</p>
+        <p>5-Dedicated time for independent study, reviewing sample answers, and taking mock practice tests.</p>
+        <p>6-A willingness to analyze mistakes, apply examiner feedback strategies, and refine test performance.</p>
+    </div>
+
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">COURSE ADVANTAGES</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Master high-scoring IELTS vocabulary, collocations, and topic-specific expressions for Speaking and Writing.</p>
+        <p>2-Improve fluency, coherence, and pronunciation to excel in all three parts of the IELTS Speaking test.</p>
+        <p>3-Apply a wide range of grammatical structures accurately to boost your Grammatical Range and Accuracy score.</p>
+        <p>4-Sharpen listening skills by practicing with exam-style recordings across British, Australian, and North American accents.</p>
+        <p>5-Boost reading speed and accuracy using skimming, scanning, and keyword techniques for all IELTS question types.</p>
+        <p>6-Master IELTS Writing Task 1 (reports/letters) and Task 2 (essays) with clear structures and cohesive arguments.</p>
+        <p>7-Reinforce exam readiness through targeted video lessons, model band-9 answers, and practice quizzes.</p>
+        <p>8-Gain the confidence and time-management skills needed to perform at your best on official test day.</p>
+    </div>
+
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">COURSE OBJECTIVES</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Familiarize learners with the format, timing, and official scoring criteria of the IELTS exam.</p>
+        <p>2-Expand lexical resource with academic vocabulary, paraphrasing skills, and idiomatic expressions.</p>
+        <p>3-Master complex grammatical structures to write and speak with high accuracy.</p>
+        <p>4-Enhance listening comprehension to identify main ideas, specific details, and speaker attitudes under exam conditions.</p>
+        <p>5-Develop structured, fluent, and spontaneous speaking responses for IELTS Speaking.</p>
+        <p>6-Strengthen analytical reading strategies to tackle True/False/Not Given, Matching Headings, and summary tasks.</p>
+        <p>7-Refine academic and general writing skills to produce well-organized, and high-scoring responses.</p>
+        <p>8-Build effective self-study and time-management to achieve target IELTS band scores.</p>
+    </div>
+
+</div>
+
+        </div>
+        <!-- Playlist Sidebar -->
+        <div class="w-full md:w-72 flex flex-col gap-3">
+            <div class="flex justify-between items-center">
+                <h3 class="font-semibold text-lg">Playlist</h3>
+
+                <span class="text-sm text-gray-500">
+                    {{ videos|length }} Lessons
+                </span>
+            </div>
+            <ul id="playlist" class="flex flex-col gap-5">
+                {% for video in videos %}
+                <li>
+                    <button
+                        data-src="{% static video.url %}"
+                        data-title="{{ video.title }}"
+                        data-poster="{% static video.thumbnail %}"
+
+                        class="playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition
+                        {% if forloop.first %}
+                            bg-blue-600 text-white
+                        {% else %}
+                            bg-gray-100 hover:bg-gray-200 text-gray-800
+                        {% endif %}">
+                        <!-- Thumbnail -->
+                        <img
+                            src="{% static video.thumbnail %}"
+                            class="w-20 h-14 object-cover rounded-md"
+                            alt="{{ video.title }}">
+                        <!-- Video Information -->
+                        <div class="flex-1 min-w-0">
+                            <p class="font-medium text-sm truncate">
+                                {{ forloop.counter }}. {{ video.title }}
+                            </p>
+                            <p class="text-xs opacity-70 mt-1">
+                                Click to watch
+                            </p>
+                        </div>
+                        <!-- Play Icon -->
+                        <span class="text-lg"><i class="fa-solid fa-play"></i></span>
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<section id="rt-review" aria-labelledby="rt-review-heading" class="mt-6 px-4 md:px-8">
+   <div class="mx-auto max-w-7xl">
+      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+         <div>
+            <h2 id="rt-review-heading" class="text-2xl  tracking-tight  dark:text-neutral-50 font-popin text-blue-900 font-extrabold">What listeners say</h2>
+            <a href="#" class="group/rt mt-2 inline-flex items-center gap-2 rounded-sm text-sm text-neutral-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 dark:text-neutral-400 dark:focus-visible:outline-zinc-50">
+               <span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="relative shrink-0"><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="absolute inset-y-0 left-0 w-[60%] overflow-hidden"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></span></span>
+               <span aria-hidden="true" class="font-medium text-neutral-950 tabular-nums dark:text-neutral-50">4.6</span>
+               <span class="sr-only">Rated 4.6 out of 5 stars,</span>
+               <span class="underline decoration-neutral-950/30 underline-offset-4 transition-colors duration-150 group-hover/rt:text-neutral-950 group-hover/rt:decoration-current motion-reduce:transition-none dark:decoration-neutral-50/30 dark:group-hover/rt:text-neutral-50">1,284 reviews</span>
+            </a>
+         </div>
+         <a href="#" class="group/link inline-flex items-center gap-1 rounded-sm text-sm font-medium whitespace-nowrap text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 dark:text-zinc-50 dark:focus-visible:outline-zinc-50">See all reviews<svg class="size-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-0.5 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-1-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">CV</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">Chan Vatey</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 5 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-18" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-1-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Higher Band Scores and Exam Confidence</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">This course has elevated my IELTS preparation in many ways. I have mastered academic vocabulary, complex grammar structures, and proven test strategies that I can apply effectively across all four exam sections. The lessons are thoughtfully structured, and I feel much more confident tackling the Speaking and Writing tasks now.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">Worker</p>
+                     <button type="button" aria-pressed="false" data-helpful="24" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(48)</span></button>
+                  </div>
+               </article>
+            </li>
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-2-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">VV</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">Voeurn Vathanak</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 4 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-09" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-2-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Practical Strategies and Authentic Practice</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">I really enjoy this IELTS Preparation course because the lessons are well organized and focused on official scoring criteria. The timed reading and multi-accent listening activities help me manage my pace under exam conditions, while the Writing Task 1 and Task 2 lessons allow me to structure essays with greater precision. It is an exceptional learning experience.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">Secondary School Student</p>
+                     <button type="button" aria-pressed="false" data-helpful="11" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(12)</span></button>
+                  </div>
+               </article>
+            </li>
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-3-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">SP</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">Sak Panharith</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 3 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-02" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-3-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Achieving My Target Band Score</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">I used to struggle with time management in Reading and organizing my thoughts quickly during the IELTS Speaking test. After completing these lessons, I have refined my answering techniques, expanded my academic vocabulary, and become much better at hitting the band descriptors. I would highly recommend this course to anyone aiming for a high IELTS score.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">High school student</p>
+                     <button type="button" aria-pressed="false" data-helpful="7" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(62)</span></button>
+                  </div>
+               </article>
+            </li>
+      </ul>
+   </div>
+</section>
+
+
+<script>
+    const player = document.getElementById('video-player');
+
+    const source = document.getElementById('video-source');
+
+    const titleDisplay = document.getElementById('video-title');
+
+    const items = document.querySelectorAll('.playlist-item');
+
+    let currentIndex = 0;
+
+
+    // Function to play selected video
+    function playVideo(index) {
+
+    currentIndex = index;
+
+    const selected = items[currentIndex];
+
+    // Get video information
+    const videoSrc = selected.getAttribute('data-src');
+
+    const videoTitle = selected.getAttribute('data-title');
+
+    const videoPoster = selected.getAttribute('data-poster');
+
+
+    // Update video source
+    source.src = videoSrc;
+
+    // Update video title
+    titleDisplay.textContent = videoTitle;
+
+    // Update video thumbnail before playing
+    player.poster = videoPoster;
+
+    // Reload video
+    player.load();
+
+    // Play video
+    player.play();
+
+
+    // Update active playlist style
+    items.forEach((item, idx) => {
+
+        if (idx === currentIndex) {
+
+            item.className =
+                'playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition bg-blue-600 text-white';
+
+        } else {
+
+            item.className =
+                'playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition bg-gray-100 hover:bg-gray-200 text-gray-800';
+
+        }
+
+    });
+
+    }
+
+
+    // Click playlist to change video
+    items.forEach((item, index) => {
+
+        item.addEventListener('click', () => {
+
+            playVideo(index);
+
+        });
+
+    });
+
+
+    // Automatically play next video
+    player.addEventListener('ended', () => {
+
+        if (currentIndex < items.length - 1) {
+
+            playVideo(currentIndex + 1);
+
+        }
+
+    });
+</script>

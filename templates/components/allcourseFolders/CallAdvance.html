@@ -1,0 +1,287 @@
+{% load static %}
+<!-- <h1 class="ml-40 font-popin text-[20pt] font-extrabold text-blue-900">Beginers course</h1> -->
+<div class="flex justify-center mt-5 px-4">
+    <div class="flex flex-col md:flex-row gap-15  w-[80%]">
+        <!-- Video Player -->
+        <div class="flex-1 min-w-0">
+            <video
+                id="video-player"
+                poster="{% static videos.0.thumbnail %}"
+                preload="none"
+                class="w-full h-56 md:h-72 lg:h-96 rounded-lg bg-black object-cover"
+                controls>
+                <source
+                    id="video-source"
+                    src="{% static videos.0.url %}"
+                    type="video/mp4">
+
+            </video>
+            <p id="video-title" class="mt-3 font-extrabold text-[25pt] font-popin text-blue-900">
+                {{ videos.0.title }}
+            </p>
+<div class="hidden sm:block md:block">
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">Course Description</h1>
+    <div class="font-popin text-gray-700 flex flex-col gap-5 indent-5">
+        <p>The Advanced English Course is designed for learners who already have a solid intermediate foundation in English and want to achieve near-native fluency, accuracy, and sophistication. This course focuses on refining advanced vocabulary, complex grammar, natural pronunciation, and persuasive communication skills to help learners express themselves effortlessly in academic, professional, and social settings.</p>
+        <p>Throughout this course, learners will master the four main English skills (Macro Skills): Listening, Speaking, Reading, and Writing, along with essential supporting skills such as Academic &amp; Idiomatic Vocabulary, Advanced Grammar, and Nuanced Pronunciation.</p>
+        <p>The lessons explore a wide range of complex and abstract topics, including global affairs, business, media, critical thinking, science, culture, debate, and real-world professional scenarios. Learners will study sophisticated sentence structures, idiomatic expressions, subtle grammar nuances, and high-level vocabulary to comprehend and articulate complex ideas with precision.</p>
+        <p>In addition, the course provides in-depth video lessons, authentic real-world examples, analytical reading passages, natural-speed listening activities, structured speaking practice, and challenging quizzes to reinforce mastery. By the end of the course, learners will be able to communicate fluently and spontaneously, understand demanding English content, and operate confidently in international academic or workplace environments.</p>
+    </div>
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">This Course Is For</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Students and learners who already have an intermediate level of English and want to reach advanced proficiency.</p>
+        <p>2-Professionals and individuals who want to communicate fluently, persuasively, and naturally in workplace or global settings.</p>
+        <p>3-Learners who want to master idiomatic expressions, nuanced vocabulary, and complex grammatical structures.</p>
+        <p>4-Students who want to refine their critical listening, articulate speaking, analytical reading, and structured writing skills.</p>
+        <p>5-People who want to understand fast-paced native conversations, academic lectures, news media, and complex literature.</p>
+        <p>6-Learners preparing for university studies, international careers, or high-level English proficiency exams.</p>
+    </div>
+
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">Course Requriment</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-A solid intermediate command of English, including comfortable use of everyday vocabulary and standard grammar tenses.</p>
+        <p>2-A strong commitment to refining fluency, accuracy, and critical thinking in English.</p>
+        <p>3-A smartphone, tablet, or computer for accessing video lessons and learning materials.</p>
+        <p>4-An internet connection for watching videos and completing online exercises.</p>
+        <p>5-Dedicated time for independent study, reviewing complex materials, and active language practice.</p>
+        <p>6-A willingness to engage with challenging topics, apply nuanced vocabulary, and polish communication style.</p>
+    </div>
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">Course Advantages</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Master advanced vocabulary, collocations, and idiomatic expressions for natural communication.</p>
+        <p>2-Refine pronunciation, intonation, and speaking fluency to sound clear and natural.</p>
+        <p>3-Understand complex and nuanced English grammar and apply it accurately in formal and informal contexts.</p>
+        <p>4-Sharpen listening skills by understanding native-speed discussions, lectures, and media across various accents.</p>
+        <p>5-Elevate reading comprehension through in-depth articles, and complex texts.</p>
+        <p>6-Develop advanced writing skills by crafting cohesive essays,and persuasive arguments.</p>
+        <p>7-Reinforce high-level skills through targeted video lessons, analytical activities, and quizzes.</p>
+        <p>8-Gain the confidence to debate, present, and interact effortlessly in academic, professional, and international environments.</p>
+    </div>
+    <h1 class="font-extrabold font-popin text-[20pt] text-blue-900">Course Objectives</h1>
+    <div class="indent-5 font-popin text-gray-700 flex flex-col gap-2">
+        <p>1-Elevate learners' overall English proficiency toward mastery across all four core skills.</p>
+        <p>2-Expand lexical range with sophisticated vocabulary, and context-appropriate expressions.</p>
+        <p>3-Master advanced grammar rules and construct nuanced, complex sentences accurately.</p>
+        <p>4-Enhance listening comprehension to follow fast-paced discussions,and implicit meanings.</p>
+        <p>5-Develop articulate, spontaneous speaking skills for debates,and professional discussions.</p>
+        <p>6-Strengthen critical reading skills to analyze complex arguments in diverse texts.</p>
+        <p>7-Refine advanced writing skills to produce well-structured,and stylistically appropriate texts.</p>
+        <p>8-Foster autonomous, lifelong learning habits for continued mastery in real-world English.</p>
+    </div>
+</div>
+</div>
+        <!-- Playlist Sidebar -->
+        <div class="w-full md:w-72 flex flex-col gap-3">
+            <div class="flex justify-between items-center">
+                <h3 class="font-semibold text-lg">Playlist</h3>
+
+                <span class="text-sm text-gray-500">
+                    {{ videos|length }} Lessons
+                </span>
+            </div>
+            <ul id="playlist" class="flex flex-col gap-5">
+                {% for video in videos %}
+                <li>
+                    <button
+                        data-src="{% static video.url %}"
+                        data-title="{{ video.title }}"
+                        data-poster="{% static video.thumbnail %}"
+
+                        class="playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition
+                        {% if forloop.first %}
+                            bg-blue-600 text-white
+                        {% else %}
+                            bg-gray-100 hover:bg-gray-200 text-gray-800
+                        {% endif %}">
+                        <!-- Thumbnail -->
+                        <img
+                            src="{% static video.thumbnail %}"
+                            class="w-20 h-14 object-cover rounded-md"
+                            alt="{{ video.title }}">
+                        <!-- Video Information -->
+                        <div class="flex-1 min-w-0">
+                            <p class="font-medium text-sm truncate">
+                                {{ forloop.counter }}. {{ video.title }}
+                            </p>
+                            <p class="text-xs opacity-70 mt-1">
+                                Click to watch
+                            </p>
+                        </div>
+                        <!-- Play Icon -->
+                        <span class="text-lg"><i class="fa-solid fa-play"></i></span>
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<section id="rt-review" aria-labelledby="rt-review-heading" class="mt-6 px-4 md:px-8">
+   <div class="mx-auto max-w-7xl">
+      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+         <div>
+            <h2 id="rt-review-heading" class="text-2xl  tracking-tight  dark:text-neutral-50 font-popin text-blue-900 font-extrabold">What listeners say</h2>
+            <a href="#" class="group/rt mt-2 inline-flex items-center gap-2 rounded-sm text-sm text-neutral-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 dark:text-neutral-400 dark:focus-visible:outline-zinc-50">
+               <span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="relative shrink-0"><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="absolute inset-y-0 left-0 w-[60%] overflow-hidden"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></span></span>
+               <span aria-hidden="true" class="font-medium text-neutral-950 tabular-nums dark:text-neutral-50">4.6</span>
+               <span class="sr-only">Rated 4.6 out of 5 stars,</span>
+               <span class="underline decoration-neutral-950/30 underline-offset-4 transition-colors duration-150 group-hover/rt:text-neutral-950 group-hover/rt:decoration-current motion-reduce:transition-none dark:decoration-neutral-50/30 dark:group-hover/rt:text-neutral-50">1,284 reviews</span>
+            </a>
+         </div>
+         <a href="#" class="group/link inline-flex items-center gap-1 rounded-sm text-sm font-medium whitespace-nowrap text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 dark:text-zinc-50 dark:focus-visible:outline-zinc-50">See all reviews<svg class="size-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-0.5 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+      </div>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-1-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">WS</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">Wiliam Smith</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 5 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-18" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-1-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Greater Fluency and Precision in English</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">This course has elevated my English in many ways. I have mastered sophisticated vocabulary, complex grammar structures, and idiomatic expressions that I can use naturally in both professional and everyday discussions. The lessons are thoughtfully structured, and I feel much more articulate and confident speaking English now.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">Worker</p>
+                     <button type="button" aria-pressed="false" data-helpful="24" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(43)</span></button>
+                  </div>
+               </article>
+            </li>
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-2-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">JA</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">John Amelia</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 4 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-09" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-2-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Insightful Lessons and Challenging Practice</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">I really enjoy this Advanced English course because the lessons are well organized and intellectually stimulating. The authentic listening and reading activities help me grasp subtle nuances in English, while the advanced grammar and vocabulary lessons allow me to express complex ideas with greater precision. It is an exceptional learning experience.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">Secondary School Student</p>
+                     <button type="button" aria-pressed="false" data-helpful="11" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(51)</span></button>
+                  </div>
+               </article>
+            </li>
+            <li class="flex flex-col rounded-xl bg-white p-5 shadow-xs ring-1 ring-neutral-950/10 sm:max-lg:first:col-span-2 dark:bg-neutral-900 dark:ring-neutral-800">
+               <article aria-labelledby="rt-review-3-title" class="flex grow flex-col">
+                  <div class="flex min-w-0 items-center gap-3">
+                     <span aria-hidden="true" class="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-950 dark:bg-neutral-800 dark:text-neutral-300">EJ</span>
+                     <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-neutral-950 dark:text-neutral-50">Emili Julie</p>
+                        <p class="inline-flex items-center gap-1 text-xs font-medium whitespace-nowrap text-green-700 dark:text-green-400"><svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m16 9-5.5 5.5L8 12" /></svg>Verified buyer</p>
+                     </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                     <div role="img" aria-label="Rated 3 out of 5 stars"><span class="flex shrink-0 items-center gap-0.5" aria-hidden="true"><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-[#ffc107] text-[#ffc107]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><svg class="size-4 shrink-0 fill-neutral-200 text-neutral-200 dark:fill-neutral-700 dark:text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span></div>
+                     <time datetime="2026-10-02" class="text-[13px] whitespace-nowrap text-neutral-600 dark:text-neutral-400">Nov 19, 2026</time>
+                  </div>
+                  <h3 id="rt-review-3-title" class="mt-3 text-base font-semibold text-neutral-950 dark:text-neutral-50">Taking My Fluency to the Next Level</h3>
+                  <p class="mt-2 mb-5 text-[15px]/6 text-pretty text-neutral-950 dark:text-neutral-300">I used to struggle with expressing nuanced opinions and keeping up with fast-paced English in demanding situations. After completing these lessons, I have refined my communication skills, expanded my lexicon, and become much better at following native-level conversations. I would highly recommend this course to anyone looking to polish their English to an advanced standard.</p>
+                  <div class="mt-auto flex items-center justify-between gap-3 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+                     <p class="min-w-0 text-[13px] text-neutral-600 dark:text-neutral-400">High school student</p>
+                     <button type="button" aria-pressed="false" data-helpful="7" class="group/help -mr-2.5 inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-medium whitespace-nowrap text-neutral-600 transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 aria-pressed:bg-neutral-100 aria-pressed:text-neutral-950 motion-reduce:transition-none sm:h-8 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus-visible:outline-zinc-50 dark:aria-pressed:bg-neutral-800 dark:aria-pressed:text-neutral-50"><svg class="size-4 shrink-0 group-aria-pressed/help:fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /><path d="M7 10v12" /></svg>Helpful<span data-count="" class="tabular-nums">(30)</span></button>
+                  </div>
+               </article>
+            </li>
+      </ul>
+   </div>
+</section>
+
+
+<script>
+    const player = document.getElementById('video-player');
+
+    const source = document.getElementById('video-source');
+
+    const titleDisplay = document.getElementById('video-title');
+
+    const items = document.querySelectorAll('.playlist-item');
+
+    let currentIndex = 0;
+
+
+    // Function to play selected video
+    function playVideo(index) {
+
+    currentIndex = index;
+
+    const selected = items[currentIndex];
+
+    // Get video information
+    const videoSrc = selected.getAttribute('data-src');
+
+    const videoTitle = selected.getAttribute('data-title');
+
+    const videoPoster = selected.getAttribute('data-poster');
+
+
+    // Update video source
+    source.src = videoSrc;
+
+    // Update video title
+    titleDisplay.textContent = videoTitle;
+
+    // Update video thumbnail before playing
+    player.poster = videoPoster;
+
+    // Reload video
+    player.load();
+
+    // Play video
+    player.play();
+
+
+    // Update active playlist style
+    items.forEach((item, idx) => {
+
+        if (idx === currentIndex) {
+
+            item.className =
+                'playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition bg-blue-600 text-white';
+
+        } else {
+
+            item.className =
+                'playlist-item w-full flex items-center gap-3 p-2 rounded-lg text-left transition bg-gray-100 hover:bg-gray-200 text-gray-800';
+
+        }
+
+    });
+
+    }
+
+
+    // Click playlist to change video
+    items.forEach((item, index) => {
+
+        item.addEventListener('click', () => {
+
+            playVideo(index);
+
+        });
+
+    });
+
+
+    // Automatically play next video
+    player.addEventListener('ended', () => {
+
+        if (currentIndex < items.length - 1) {
+
+            playVideo(currentIndex + 1);
+
+        }
+
+    });
+</script>

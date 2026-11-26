@@ -1,0 +1,142 @@
+{% load static %}
+<section class="bg-gray-50 py-16 hidden md:block">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Improve Your English
+            </h2>
+            <p class="text-gray-500 mt-3">
+                Explore lessons and practice your English skills.
+            </p>
+        </div>
+
+        <!-- Main Containers -->
+        <div class="flex justify-center px-4">
+
+            <!-- Slider containers-->
+            <div class="relative w-full max-w-6xl h-[450px] overflow-hidden rounded-3xl shadow-xl">
+
+                <!-- Slider Track -->
+                <div id="slider-track" class="flex w-full h-full transition-transform duration-500 ease-in-out">
+
+                    <!-- Slide 1 -->
+                    <div class=" min-w-full shrink-0 h-full flex items-center justify-between px-6 md:px-16 text-white">
+                        <div class="max-w-lg pl-10 text-black">
+                            <p class="hidden md:block text-blue-900 font-semibold mb-4">
+                                START LEARNING TODAY
+                            </p>
+                            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                                Build Your English Vocabulary EN CLUB
+                            </h2>
+                            <p class="hidden md:block mt-5 text-gray-500 text-lg">
+                                Discover new words, learn their meanings,
+                                and improve your English every day.
+                            </p>
+                            <button class="hidden md:block mt-8 bg-white text-blue-700 px-7 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+                                Start Learning
+                            </button>
+                        </div>
+                        <div class=" w-[450px] h-[350px] flex items-center">
+                            <img class=" object-cover w-[400px] h-[250px] rounded-xl" src="{% static 'images/info1.png' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class=" min-w-full shrink-0 h-full flex items-center justify-between px-6 md:px-16 text-white">
+                        <div class="max-w-lg pl-10 text-black">
+                            <p class="hidden md:block text-blue-900 font-semibold mb-4">
+                                START LEARNING TODAY
+                            </p>
+                            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                                Build Your English Grammar with EN CLUB
+                            </h2>
+                            <p class="hidden md:block mt-5 text-gray-500 text-lg">
+                                Build accurate sentences effortlessly using practical rules instead of confusing textbook theory.
+                            </p>
+                            <button class="hidden md:block mt-8 bg-white text-blue-700 px-7 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+                                Start Learning
+                            </button>
+                        </div>
+                        <div class=" w-[450px] h-[350px] flex items-center">
+                            <img class=" object-cover w-[400px] h-[250px] rounded-xl" src="{% static 'images/info2.png' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class=" min-w-full shrink-0 h-full flex items-center justify-between px-6 md:px-16 text-white">
+                        <div class="max-w-lg pl-10 text-black">
+                            <p class="hidden md:block text-blue-500 font-semibold mb-4">
+                                START LEARNING TODAY
+                            </p>
+                            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                                Build Your English Speaking with EN CLUB
+                            </h2>
+                            <p class="hidden md:block mt-5 text-blue-500 text-lg">
+                                 Practice real-life dialogues and natural pronunciation to speak smoothly without hesitation.
+                            </p>
+                            <button class="hidden md:block mt-8 bg-white text-blue-700 px-7 py-3 rounded-full font-bold hover:bg-blue-100 transition">
+                                Start Learning
+                            </button>
+                        </div>
+                        <div class=" w-[450px] h-[350px] flex items-center">
+                            <img class=" object-cover w-[400px] h-[250px] rounded-xl" src="{% static 'images/info3.png' %}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Previous Button -->
+                <button onclick="previousSlide()" class="absolute left-5 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-11 h-11 rounded-full shadow-lg transition">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- Next Button -->
+                <button onclick="nextSlide()" class="absolute right-5 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-11 h-11 rounded-full shadow-lg transition">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+        </div>
+        <script>
+                // 1. Start from the first slide
+                let currentSlide = 0;
+
+                // 2. Get the slider track
+                const track = document.getElementById("slider-track");
+
+                // 3. Count the slides
+                const totalSlides = track.children.length;
+
+                // 4. Update slider position
+                function updateSlider() {
+                    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                }
+
+                // 5. Next slide
+                function nextSlide() {
+                    currentSlide++;
+                    if (currentSlide >= totalSlides) {
+                        currentSlide = 0;
+                    }
+                    updateSlider();
+                }
+
+                // 6. Previous slide
+                function previousSlide() {
+                    currentSlide--;
+                    if (currentSlide < 0) {
+                        currentSlide = totalSlides - 1;
+                    }
+                    updateSlider();
+                }
+
+                // 7. Automatic sliding (every 7 seconds)
+                setInterval(nextSlide, 7000);
+                
+            //     setInterval(function() {
+            //     nextSlide();
+            // }, 7000);
+        </script>
+
+</section>

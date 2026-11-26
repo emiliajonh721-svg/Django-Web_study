@@ -1,0 +1,81 @@
+{% load static %}
+<!-- hero section -->
+ <section aria-labelledby="hero-text-title" class="relative isolate overflow-hidden bg-white px-4 py-16 md:px-8 md:py-24 dark:bg-neutral-950">
+   <div class="mx-auto max-w-4xl text-center">
+      <p class="font-mono text-xs tracking-widest text-neutral-600 uppercase dark:text-neutral-400"><i class="fa-solid fa-graduation-cap text-2xl"></i> EN CLUB .is your homie</p>
+      <h1 id="hero-text-title" class="mt-5 text-4xl leading-[1.05] font-semibold tracking-tighter text-balance text-neutral-950 sm:text-5xl lg:text-6xl xl:text-7xl dark:text-neutral-50">Turn customer interviews into clear decisions</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg/7 text-pretty text-neutral-600 dark:text-neutral-400">EN CLUB records, transcribes, and tags every call, then links each quote directly to the roadmap item it supports. Your team makes decisions backed by real evidence, not guesswork.</p>
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+         <a href="#" class="group inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 text-[15px] font-medium whitespace-nowrap text-white shadow-xs transition-colors duration-150 hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:translate-y-px disabled:cursor-not-allowed dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-50">Start a free courses<svg class="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+         <a href="#" class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-neutral-100 px-5 text-[15px] font-medium whitespace-nowrap text-neutral-950 transition-colors duration-150 hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950 active:translate-y-px dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700 dark:focus-visible:outline-zinc-50">See a sample courses</a>
+      </div>
+      <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+         <li class="flex items-center gap-1.5"><svg class="size-4 shrink-0 text-neutral-950 dark:text-neutral-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Free for 3 weeks</li>
+         <li class="flex items-center gap-1.5"><svg class="size-4 shrink-0 text-neutral-950 dark:text-neutral-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Transcripts available in 12 courses</li>
+         <li class="flex items-center gap-1.5"><svg class="size-4 shrink-0 text-neutral-950 dark:text-neutral-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> All data stays securely in the EU</li>
+      </ul>
+   </div>
+   <div class="mx-auto mt-16 max-w-4xl border-t border-neutral-200 pt-8 text-center md:mt-20 dark:border-neutral-800">
+      <h2 class="text-sm text-neutral-600 dark:text-neutral-400">Research teams at 1,900+ companies run their interviews on EN CLUB</h2>
+      <ul class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-lg font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
+         <li>Halcyon</li>
+         <li>Northwind</li>
+         <li>Kestrel Labs</li>
+         <li>Brightpath</li>
+         <li>Lumora</li>
+      </ul>
+   </div>
+</section>
+
+<!-- Card Courses-->
+<div id="courses-skeleton" class="mt-10 w-full h-full px-4 sm:px-8 lg:px-30 flex justify-center lg:justify-between flex-wrap gap-10">
+    {% for i in "1234" %}
+    <div class="bg-neutral-primary-soft block w-full max-w-sm p-6 border-gray-200 border-[1px] rounded-lg shadow-lg animate-pulse">
+        
+        <div class="bg-gray-300 w-full h-[200px] rounded-base"></div>
+        <div class="mt-6 mb-3 h-7 bg-gray-300 rounded w-3/4"></div>  
+        <div class="space-y-2 mb-6">
+            <div class="h-4 bg-gray-200 rounded w-full"></div>
+            <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>        
+        <div class="h-10 bg-gray-300 rounded-[10px] w-36"></div>  
+        <div class="mt-3 h-4 bg-gray-200 rounded w-1/4"></div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+<div id="courses-container" class="hidden mt-10 w-full h-full px-4 sm:px-8 lg:px-30 justify-center lg:justify-between flex-wrap gap-10">
+    {% for CD in CoursesData %}
+    <div class="bg-neutral-primary-soft block w-full max-w-sm p-6 border-gray-200 border-[1px] rounded-lg shadow-lg hover:scale-105 duration-300">
+        <div class="bg-blue-400 w-full h-[200px]">
+            <a href="#">
+                <img class="rounded-base object-cover w-full h-full" src="{% static CD.image %}" alt="{{CD.name}}" />
+            </a>
+        </div>
+        <a href="#">
+            <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading text-blue-900">{{CD.name}}</h5>
+        </a>
+        <p class="mb-6 text-body text-gray-700">{{CD.description}}</p>
+        <a href="{% if CD.urls_name %}{% url CD.urls_name %}{% else %}#{% endif %}" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium border-gray-300 hover:bg-neutral-tertiary-medium hover:text-heading  shadow-xs font-medium leading-5 rounded-[10px] text-sm px-4 py-2.5 focus:outline-none hover:bg-slate-100">
+            Explore lesson
+            <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+        </a>
+        <p class="mt-2 text-gray-500"><i class="fa-regular fa-eye"></i> {{CD.visit}} views</p>
+    </div>
+    {% endfor %}
+</div>
+<script>
+    window.addEventListener("load", function () {
+        setTimeout(function () {
+            // Swap Courses
+            const coursesSkeleton = document.getElementById("courses-skeleton");
+            const coursesContainer = document.getElementById("courses-container");
+
+            if (coursesSkeleton && coursesContainer) {
+                coursesSkeleton.classList.replace("flex", "hidden");
+                coursesContainer.classList.replace("hidden", "flex");
+            }
+        }, 1000);
+    });
+</script>
