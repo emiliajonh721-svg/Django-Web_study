@@ -97,7 +97,7 @@ def Allcourse(request):
         
     ]
     context={'CoursesData': CoursesData}
-    return render(request, 'Allcourse.html',context)
+    return render(request, 'AllCourse.html',context)
 
 def ElectronicBookspage(request):
     books=[
